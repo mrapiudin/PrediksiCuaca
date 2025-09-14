@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediksi Cuaca - Weather App</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="app-body">
+    <div class="container">
+        <header class="header">
+            <h1 class="main-title">Prediksi Cuaca</h1>
+            <p class="subtitle">Get current weather information for any city</p>
+        </header>
+
+        <div class="main-content">
+            <!-- Search Section -->
+            <div class="search-container">
+                <div class="search-form">
+                    <input 
+                        type="text" 
+                        id="cityInput" 
+                        placeholder="Enter city name..." 
+                        class="city-input"
+                    >
+                    <button 
+                        id="searchBtn" 
+                        class="search-btn"
+                    >
+                        Search Weather
+                    </button>
+                </div>
+            </div>
+
+            <!-- Loading State -->
+            <div id="loadingState" class="loading-state hidden">
+                <div class="spinner"></div>
+                <p class="loading-text">Loading weather data...</p>
+            </div>
+
+            <!-- Error State -->
+            <div id="errorState" class="error-state hidden">
+                <p class="error-message" id="errorMessage"></p>
+            </div>
+
+            <!-- Weather Display -->
+            <div id="weatherDisplay" class="weather-display hidden">
+                <div class="weather-header">
+                    <div class="weather-header-content">
+                        <div class="city-info">
+                            <h2 id="cityName" class="city-name"></h2>
+                            <p id="countryName" class="country-name"></p>
+                        </div>
+                        <div class="temp-info">
+                            <div id="temperature" class="temperature"></div>
+                            <div id="weatherCondition" class="weather-condition"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="weather-details">
+                    <div class="weather-stats">
+                        <!-- Feels Like -->
+                        <div class="weather-stat-card">
+                            <div class="stat-value" id="feelsLike"></div>
+                            <div class="stat-label">Feels Like</div>
+                        </div>
+
+                        <!-- Humidity -->
+                        <div class="weather-stat-card">
+                            <div class="stat-value" id="humidity"></div>
+                            <div class="stat-label">Humidity</div>
+                        </div>
+
+                        <!-- Wind Speed -->
+                        <div class="weather-stat-card">
+                            <div class="stat-value" id="windSpeed"></div>
+                            <div class="stat-label">Wind Speed</div>
+                        </div>
+                    </div>
+
+                    <div class="additional-info">
+                        <!-- Pressure -->
+                        <div class="info-row">
+                            <span class="info-label">Pressure</span>
+                            <span class="info-value" id="pressure"></span>
+                        </div>
+
+                        <!-- Visibility -->
+                        <div class="info-row">
+                            <span class="info-label">Visibility</span>
+                            <span class="info-value" id="visibility"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Default City Weather (Jakarta) -->
+            <div class="default-city-section">
+                <button 
+                    id="defaultCityBtn" 
+                    class="default-city-btn"
+                >
+                    Show weather for Jakarta
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 Prediksi Cuaca. Weather data provided by OpenWeatherMap.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
